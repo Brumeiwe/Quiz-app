@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- 🌗 THEME TOGGLE BUTTON (TOP RIGHT) -->
+  <div class="theme-toggle">
+    <button id="theme-btn">🌙 Dark Mode</button>
+  </div>
+
+  <!-- Constant Header -->
+  <header class="brand-header">
+    Quiz Master 🧠
+  </header>
+
+  <div class="container">
+
+    <!-- First Page -->
+    <div id="start-page">
+      <h1>Test Your Agriculture Knowledge!</h1>
+      <label for="num-questions">Number of Questions (1-611):</label><br>
+      <input type="number" id="num-questions" min="1" max="611" value="10"><br>
+      <button id="start-quiz">Start Quiz</button>
+      <p class="info">There are 611 available questions from the provided text.</p>
+    </div>
+
+    <!-- Quiz Page -->
+    <div id="quiz-page" style="display:none;">
+      <div class="question-counter" id="question-counter">Question 1 of 10</div>
+      <div class="timer">60s</div>
+      <div id="quiz-container"></div>
+      <div class="button-container">
+        <button id="submit">Submit Answer</button>
+        <button id="next">Next Question</button>
+      </div>
+      <div id="score"></div>
+    </div>
+
+  </div>
+
+  <!-- Floating background bubbles -->
+  <div class="bubble bubble1"></div>
+  <div class="bubble bubble2"></div>
+  <div class="bubble bubble3"></div>
+  <div class="bubble bubble4"></div>
+  <div class="bubble bubble5"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
