@@ -1,0 +1,279 @@
+/* Body & General */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Floating bubbles background */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  background: #1976d2;
+  animation: float 25s linear infinite;
+}
+.bubble1 { width: 100px; height: 100px; top: 10%; left: 5%; animation-duration: 30s; }
+.bubble2 { width: 150px; height: 150px; top: 50%; left: 15%; animation-duration: 40s; }
+.bubble3 { width: 80px; height: 80px; top: 30%; left: 80%; animation-duration: 35s; }
+.bubble4 { width: 120px; height: 120px; top: 70%; left: 60%; animation-duration: 45s; }
+.bubble5 { width: 90px; height: 90px; top: 85%; left: 25%; animation-duration: 50s; }
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-100px) translateX(50px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+/* 🌗 THEME TOGGLE BUTTON (TOP RIGHT) */
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 2000;
+}
+
+#theme-btn {
+  padding: 8px 18px;
+  background: #1565c0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+#theme-btn:hover {
+  background: #0d47a1;
+}
+
+/* Brand Header */
+.brand-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  background-color: #ffffff;
+  color: #1976d2;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Container */
+.container {
+  background-color: #f9f9f9;
+  margin: 120px auto 30px auto;
+  padding: 30px 40px;
+  border-radius: 15px;
+  width: 600px;
+  max-width: 95%;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  position: relative;
+  transition: all 0.3s ease;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Headings */
+h1 {
+  font-size: 28px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* Start page input & button */
+#start-page input {
+  width: 100px;
+  padding: 8px;
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+#start-page button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background: #1976d2;
+  color: white;
+  cursor: pointer;
+}
+
+#start-page button:hover {
+  background: #1565c0;
+}
+
+#start-page .info {
+  font-size: 12px;
+  color: #555;
+  margin-top: 15px;
+}
+
+/* Question counter top-left */
+.question-counter {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Timer top-right */
+.timer {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #d50000;
+}
+
+/* Question text */
+.question {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Option buttons */
+.options button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px 15px;
+  text-align: left;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.options button:hover {
+  background: #f1f1f1;
+}
+
+/* Selected option - before submit */
+.options button.selected {
+  border: 2px solid #1976d2; /* blue border */
+  background-color: #e3f2fd; /* light blue inside */
+  color: inherit;
+}
+
+/* Correct option after submit */
+.options button.correct {
+  border: 2px solid #00c853;
+  background-color: #b9f6ca;
+  color: #006400;
+  font-weight: bold;
+}
+
+/* Wrong option after submit */
+.options button.wrong {
+  border: 2px solid #d50000;
+  background-color: #ff8a80;
+  color: #800000;
+  font-weight: bold;
+}
+
+/* Dark mode - default option buttons (before selecting anything) */
+body.dark .options button {
+  background-color: #3a3a3a; /* dark grey background */
+  border-color: #555;         /* keeps border visible */
+  color: #eee;                /* text color */
+}
+
+
+/* Dark mode - Selected before submit */
+body.dark .options button.selected {
+  border: 2px solid #90caf9; /* lighter blue border */
+  background-color: #1976d2; /* dark blue inside */
+  color: #fff;
+}
+
+/* Dark mode - Correct after submit */
+body.dark .options button.correct {
+  border: 2px solid #00c853;
+  background-color: #b9f6ca;
+  color: #006400;
+}
+
+/* Dark mode - Wrong after submit */
+body.dark .options button.wrong {
+  border: 2px solid #d50000;
+  background-color: #ff8a80;
+  color: #800000;
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+#submit, #next, #restart {
+  padding: 12px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+}
+
+#submit {
+  background: #0d47a1;
+  color: white;
+}
+
+#submit:hover { background: #0d47a1; }
+
+#next {
+  background: #e65100;
+  color: white;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#next.enabled {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#restart {
+  background: #4caf50;
+  color: white;
+  margin-top: 20px;
+}
+
+/* 🌙🌚 DARK MODE */
+body.dark {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark .brand-header {
+  background: #121212;
+  color: #bbdefb;
+}
+
+body.dark .container {
+  background: #2a2a2a;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+body.dark h1 {
+  color: #e0e0e0;
+}
